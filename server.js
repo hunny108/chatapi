@@ -34,11 +34,6 @@ app.use('/api/users', userRoutes);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.get('/chat', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 
 initSocket(server, redisClient);
 
